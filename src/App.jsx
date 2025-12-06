@@ -258,15 +258,99 @@ export default function AnupaPortfolio() {
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Photo - Shows FIRST on mobile, SECOND on desktop */}
+            <div className="order-1 lg:order-2 w-full">
+              <div className="relative w-full h-full flex items-center justify-center py-8 lg:py-0">
+                {/* Floating decorative elements */}
+                <div className="absolute inset-0">
+                  {[0, 1, 2].map((i) => (
+                    <div
+                      key={i}
+                      className="absolute rounded-3xl border-2 border-emerald-500/20"
+                      style={{
+                        width: `${240 - i * 30}px`,
+                        height: `${240 - i * 30}px`,
+                        left: '50%',
+                        top: '50%',
+                        transform: `translate(-50%, -50%) rotate(${i * 15}deg)`,
+                        animation: `spin ${30 + i * 10}s linear infinite ${i % 2 === 0 ? 'normal' : 'reverse'}`
+                      }}
+                    />
+                  ))}
+                </div>
+
+                {/* Main Photo Card */}
+                <div className="relative z-10 group">
+                  {/* Glow effect */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+                  
+                  {/* Photo container - responsive sizing */}
+                  <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-3xl overflow-hidden border-4 border-emerald-500/30 group-hover:border-emerald-500/60 transition-all duration-500 group-hover:scale-105">
+                    {/* Background gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10" />
+                    
+                    {/* Your photo */}
+                    <img 
+                      src="/profile-photo.png" 
+                      alt="Anupa Wimalasiri"
+                      className="w-full h-full object-cover"
+                    />
+                    
+                    {/* Overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <p className="text-white font-bold text-base lg:text-lg">Anupa Wimalasiri</p>
+                        <p className="text-emerald-400 text-xs lg:text-sm">Automation Specialist</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floating badges - only on larger screens */}
+                  <div className="hidden sm:block absolute -top-4 -right-4 px-3 py-1.5 lg:px-4 lg:py-2 bg-emerald-500 text-slate-950 font-bold rounded-full text-xs lg:text-sm shadow-lg animate-bounce">
+                    Available for Work
+                  </div>
+                  
+                  <div className="hidden sm:block absolute -bottom-4 -left-4 px-3 py-1.5 lg:px-4 lg:py-2 bg-slate-900 border border-emerald-500/30 text-emerald-400 font-bold rounded-full text-xs lg:text-sm backdrop-blur-md">
+                    GTN Technologies
+                  </div>
+                </div>
+
+                {/* Floating tech icons around photo - only on desktop */}
+                {[
+                  { Icon: Code2, angle: 45, label: "Python" },
+                  { Icon: Database, angle: 135, label: "SQL" },
+                  { Icon: Zap, angle: 225, label: "VBA" },
+                  { Icon: TrendingUp, angle: 315, label: "Analytics" }
+                ].map(({ Icon, angle, label }, i) => (
+                  <div
+                    key={i}
+                    className="hidden lg:block absolute"
+                    style={{
+                      left: '50%',
+                      top: '50%',
+                      transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(-200px) rotate(-${angle}deg)`,
+                      animation: `float ${3 + i * 0.5}s ease-in-out infinite`
+                    }}
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-slate-900/80 border border-emerald-500/30 backdrop-blur-md flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                      <Icon className="w-6 h-6 text-emerald-400" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Text Content - Shows SECOND on mobile, FIRST on desktop */}
+            <div className="order-2 lg:order-1 space-y-8">
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium backdrop-blur-sm">
                   <Award className="w-4 h-4" />
                   Automate Routine, Elevate Human Potential
                 </div>
                 
-                <h1 className="text-6xl lg:text-8xl font-black leading-none">
+                <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black leading-none">
                   <span className="bg-gradient-to-r from-white via-emerald-200 to-white bg-clip-text text-transparent">
                     Anupa
                   </span>
@@ -276,11 +360,11 @@ export default function AnupaPortfolio() {
                   </span>
                 </h1>
                 
-                <p className="text-2xl font-semibold text-emerald-400">
+                <p className="text-xl sm:text-2xl font-semibold text-emerald-400">
                   Automation Specialist & Developer
                 </p>
                 
-                <p className="text-lg text-slate-400 leading-relaxed max-w-xl">
+                <p className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-xl">
                   Reconciliation Officer at GTN Technologies specializing in business process automation. 
                   Combining expertise in software engineering, finance, and law to build innovative solutions 
                   that streamline operations and drive efficiency.
@@ -342,87 +426,6 @@ export default function AnupaPortfolio() {
               </div>
             </div>
 
-            {/* Right side - Creative Photo Card */}
-            <div className="relative block">
-              <div className="relative w-full h-full flex items-center justify-center min-h-[600px]">
-                {/* Floating decorative elements */}
-                <div className="absolute inset-0">
-                  {[0, 1, 2].map((i) => (
-                    <div
-                      key={i}
-                      className="absolute rounded-3xl border-2 border-emerald-500/20"
-                      style={{
-                        width: `${400 - i * 50}px`,
-                        height: `${400 - i * 50}px`,
-                        left: '50%',
-                        top: '50%',
-                        transform: `translate(-50%, -50%) rotate(${i * 15}deg)`,
-                        animation: `spin ${30 + i * 10}s linear infinite ${i % 2 === 0 ? 'normal' : 'reverse'}`
-                      }}
-                    />
-                  ))}
-                </div>
-
-                {/* Main Photo Card */}
-                <div className="relative z-10 group">
-                  {/* Glow effect */}
-                  <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
-                  
-                  {/* Photo container */}
-                  <div className="relative w-80 h-80 rounded-3xl overflow-hidden border-4 border-emerald-500/30 group-hover:border-emerald-500/60 transition-all duration-500 group-hover:scale-105">
-                    {/* Background gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10" />
-                    
-                    {/* Your photo */}
-                    <img 
-                      src="/profile-photo.png" 
-                      alt="Anupa Wimalasiri"
-                      className="w-full h-full object-cover"
-                    />
-                    
-                    {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="absolute bottom-6 left-6 right-6">
-                        <p className="text-white font-bold text-lg">Anupa Wimalasiri</p>
-                        <p className="text-emerald-400 text-sm">Automation Specialist</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Floating badges */}
-                  <div className="absolute -top-4 -right-4 px-4 py-2 bg-emerald-500 text-slate-950 font-bold rounded-full text-sm shadow-lg animate-bounce">
-                    Available for Work
-                  </div>
-                  
-                  <div className="absolute -bottom-4 -left-4 px-4 py-2 bg-slate-900 border border-emerald-500/30 text-emerald-400 font-bold rounded-full text-sm backdrop-blur-md">
-                    GTN Technologies
-                  </div>
-                </div>
-
-                {/* Floating tech icons around photo */}
-                {[
-                  { Icon: Code2, angle: 45, label: "Python" },
-                  { Icon: Database, angle: 135, label: "SQL" },
-                  { Icon: Zap, angle: 225, label: "VBA" },
-                  { Icon: TrendingUp, angle: 315, label: "Analytics" }
-                ].map(({ Icon, angle, label }, i) => (
-                  <div
-                    key={i}
-                    className="absolute"
-                    style={{
-                      left: '50%',
-                      top: '50%',
-                      transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(-220px) rotate(-${angle}deg)`,
-                      animation: `float ${3 + i * 0.5}s ease-in-out infinite`
-                    }}
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-slate-900/80 border border-emerald-500/30 backdrop-blur-md flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
-                      <Icon className="w-6 h-6 text-emerald-400" />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
