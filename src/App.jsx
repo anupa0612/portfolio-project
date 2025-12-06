@@ -574,7 +574,7 @@ export default function AnupaPortfolio() {
                       </div>
                       
                       <div className="space-y-3">
-                        <h3 className="text-4xl font-black bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent">
+                        <h3 className={`text-4xl font-black bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent`}>
                           {project.title}
                         </h3>
                         <p className="text-lg text-slate-300 leading-relaxed">
