@@ -175,7 +175,7 @@ export default function AnupaPortfolio() {
         "Validate corporate actions and maintain audit records",
         "Deliver timely responses to client and BA queries"
       ],
-      highlight: "🏆 GTN Trailblazer Award - 2 consecutive quarters for Internal Process Automation"
+      highlight: "🏆 GTN Trailblazer Award - 3 consecutive quarters for Internal Process Automation"
     },
     {
       title: "Fund Administrator",
@@ -263,7 +263,7 @@ export default function AnupaPortfolio() {
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium backdrop-blur-sm">
                   <Award className="w-4 h-4" />
-                  GTN Trailblazer Award Winner
+                  Automate Routine, Elevate Human Potential
                 </div>
                 
                 <h1 className="text-6xl lg:text-8xl font-black leading-none">
@@ -524,7 +524,7 @@ export default function AnupaPortfolio() {
                   <div className="text-sm text-slate-400">VBA Projects</div>
                 </div>
                 <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 text-center">
-                  <div className="text-3xl font-black text-emerald-400 mb-2">2</div>
+                  <div className="text-3xl font-black text-emerald-400 mb-2">3</div>
                   <div className="text-sm text-slate-400">Trailblazer Awards</div>
                 </div>
                 <div className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 text-center">
