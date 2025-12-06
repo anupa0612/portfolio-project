@@ -419,7 +419,7 @@ export default function AnupaPortfolio() {
                 </p>
 
                 <p className="text-lg">
-                  Winner of the <span className="text-emerald-400 font-semibold">GTN Trailblazer Award</span> for two consecutive 
+                  Winner of the <span className="text-emerald-400 font-semibold">GTN Trailblazer Award</span> for 3 consecutive 
                   quarters for Internal Process Automation, demonstrating my commitment to innovation and operational excellence.
                 </p>
               </div>
@@ -752,7 +752,7 @@ export default function AnupaPortfolio() {
                 <div className="flex justify-center gap-6">
                   {[
                     { Icon: Github, label: "GitHub", url: "https://github.com/anupawimalasiri" },
-                    { Icon: Linkedin, label: "LinkedIn", url: "https://www.linkedin.com/in/anupawimalasiri-71b105251" },
+                    { Icon: Linkedin, label: "LinkedIn", url: "www.linkedin.com/in/anupa-wimalasiri-71b105251" },
                     { Icon: Mail, label: "Email", url: "mailto:anupawpahasara@gmail.com" }
                   ].map(({ Icon, label, url }, i) => (
                     <a
