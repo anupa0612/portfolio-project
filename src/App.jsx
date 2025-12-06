@@ -342,51 +342,85 @@ export default function AnupaPortfolio() {
               </div>
             </div>
 
-            {/* Right side - Animated Code Visual */}
+            {/* Right side - Creative Photo Card */}
             <div className="relative hidden lg:block">
-              <div className="relative w-full aspect-square">
-                {/* Rotating rings */}
-                {[0, 1, 2].map((i) => (
-                  <div
-                    key={i}
-                    className="absolute inset-0 rounded-full border-2 border-emerald-500/20"
-                    style={{
-                      animation: `spin ${20 + i * 10}s linear infinite ${i % 2 === 0 ? 'normal' : 'reverse'}`,
-                      transform: `scale(${1 - i * 0.15})`
-                    }}
-                  />
-                ))}
-                
-                {/* Center content */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative">
-                    <div className="w-32 h-32 rounded-3xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 backdrop-blur-xl flex items-center justify-center">
-                      <Code2 className="w-16 h-16 text-emerald-400" />
-                    </div>
+              <div className="relative w-full h-full flex items-center justify-center min-h-[600px]">
+                {/* Floating decorative elements */}
+                <div className="absolute inset-0">
+                  {[0, 1, 2].map((i) => (
+                    <div
+                      key={i}
+                      className="absolute rounded-3xl border-2 border-emerald-500/20"
+                      style={{
+                        width: `${400 - i * 50}px`,
+                        height: `${400 - i * 50}px`,
+                        left: '50%',
+                        top: '50%',
+                        transform: `translate(-50%, -50%) rotate(${i * 15}deg)`,
+                        animation: `spin ${30 + i * 10}s linear infinite ${i % 2 === 0 ? 'normal' : 'reverse'}`
+                      }}
+                    />
+                  ))}
+                </div>
+
+                {/* Main Photo Card */}
+                <div className="relative z-10 group">
+                  {/* Glow effect */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
+                  
+                  {/* Photo container */}
+                  <div className="relative w-80 h-80 rounded-3xl overflow-hidden border-4 border-emerald-500/30 group-hover:border-emerald-500/60 transition-all duration-500 group-hover:scale-105">
+                    {/* Background gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-teal-500/10" />
                     
-                    {/* Floating tech icons */}
-                    {[
-                      { Icon: Database, angle: 0, label: "SQL" },
-                      { Icon: Code2, angle: 90, label: "Python" },
-                      { Icon: Zap, angle: 180, label: "VBA" },
-                      { Icon: TrendingUp, angle: 270, label: "Analytics" }
-                    ].map(({ Icon, angle, label }, i) => (
-                      <div
-                        key={i}
-                        className="absolute"
-                        style={{
-                          transform: `rotate(${angle}deg) translateY(-140px) rotate(-${angle}deg)`,
-                          animation: `float ${3 + i * 0.5}s ease-in-out infinite`
-                        }}
-                      >
-                        <div className="w-16 h-16 rounded-2xl bg-slate-900/50 border border-emerald-500/20 backdrop-blur-sm flex flex-col items-center justify-center gap-1 hover:border-emerald-500/50 hover:bg-emerald-500/10 transition-all duration-300">
-                          <Icon className="w-6 h-6 text-emerald-400" />
-                          <span className="text-xs text-slate-400">{label}</span>
-                        </div>
+                    {/* Your photo */}
+                    <img 
+                      src="/profile-photo.jpg" 
+                      alt="Anupa Wimalasiri"
+                      className="w-full h-full object-cover"
+                    />
+                    
+                    {/* Overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <p className="text-white font-bold text-lg">Anupa Wimalasiri</p>
+                        <p className="text-emerald-400 text-sm">Automation Specialist</p>
                       </div>
-                    ))}
+                    </div>
+                  </div>
+
+                  {/* Floating badges */}
+                  <div className="absolute -top-4 -right-4 px-4 py-2 bg-emerald-500 text-slate-950 font-bold rounded-full text-sm shadow-lg animate-bounce">
+                    Available for Work
+                  </div>
+                  
+                  <div className="absolute -bottom-4 -left-4 px-4 py-2 bg-slate-900 border border-emerald-500/30 text-emerald-400 font-bold rounded-full text-sm backdrop-blur-md">
+                    GTN Technologies
                   </div>
                 </div>
+
+                {/* Floating tech icons around photo */}
+                {[
+                  { Icon: Code2, angle: 45, label: "Python" },
+                  { Icon: Database, angle: 135, label: "SQL" },
+                  { Icon: Zap, angle: 225, label: "VBA" },
+                  { Icon: TrendingUp, angle: 315, label: "Analytics" }
+                ].map(({ Icon, angle, label }, i) => (
+                  <div
+                    key={i}
+                    className="absolute"
+                    style={{
+                      left: '50%',
+                      top: '50%',
+                      transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(-220px) rotate(-${angle}deg)`,
+                      animation: `float ${3 + i * 0.5}s ease-in-out infinite`
+                    }}
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-slate-900/80 border border-emerald-500/30 backdrop-blur-md flex items-center justify-center hover:scale-110 transition-transform cursor-pointer">
+                      <Icon className="w-6 h-6 text-emerald-400" />
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
