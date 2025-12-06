@@ -375,7 +375,7 @@ export default function AnupaPortfolio() {
                     
                     {/* Your photo */}
                     <img 
-                      src="/profile-photo.jpg" 
+                      src="/profile-photo.png" 
                       alt="Anupa Wimalasiri"
                       className="w-full h-full object-cover"
                     />
