@@ -343,7 +343,8 @@ export default function AnupaPortfolio() {
             </div>
 
             {/* Right side - Creative Photo Card */}
-            <div className="relative hidden lg:block">
+            <div className="relative block">
+              <div className="relative w-64 h-64 lg:w-80 lg:h-80 mx-auto rounded-3xl...">
               <div className="relative w-full h-full flex items-center justify-center min-h-[600px]">
                 {/* Floating decorative elements */}
                 <div className="absolute inset-0">
