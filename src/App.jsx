@@ -797,7 +797,7 @@ export default function AnupaPortfolio() {
                 AW
               </div>
               <p className="text-slate-500">
-                © 2024 Anupa Wimalasiri. All rights reserved.
+                © 2025 Anupa Wimalasiri. All rights reserved.
               </p>
             </div>
             <p className="text-slate-500">
