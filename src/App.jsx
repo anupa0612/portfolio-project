@@ -318,7 +318,7 @@ export default function AnupaPortfolio() {
 
               <div className="flex gap-4 pt-4">
                 <a
-                  href="https://github.com/anupawimalasiri"
+                  href="https://github.com/anupa0612"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-xl border border-slate-700 hover:border-emerald-500/50 flex items-center justify-center hover:bg-emerald-500/5 transition-all duration-300 group"
@@ -751,7 +751,7 @@ export default function AnupaPortfolio() {
                 <h3 className="text-xl font-semibold text-slate-300">Connect with me</h3>
                 <div className="flex justify-center gap-6">
                   {[
-                    { Icon: Github, label: "GitHub", url: "https://github.com/anupawimalasiri" },
+                    { Icon: Github, label: "GitHub", url: "https://github.com/anupa0612" },
                     { Icon: Linkedin, label: "LinkedIn", url: "www.linkedin.com/in/anupa-wimalasiri-71b105251" },
                     { Icon: Mail, label: "Email", url: "mailto:anupawpahasara@gmail.com" }
                   ].map(({ Icon, label, url }, i) => (
